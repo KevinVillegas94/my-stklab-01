@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated
 
-# Create your views here.
+class TaskListCreateAPIView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
+    # ... resto del código ...

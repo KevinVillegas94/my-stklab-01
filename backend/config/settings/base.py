@@ -1,4 +1,5 @@
-from pathlib import Path
+from datetime import timedelta
+from pathlib import Path  # Si usas rutas con Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -15,7 +16,17 @@ INSTALLED_APPS = [
     'apps.tasks',
 ]
 
-# ... (resto de config base)
 
+# JWT Configuration
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
 # config/settings/__init__.py
 from .settings.development import *

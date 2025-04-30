@@ -6,3 +6,5 @@ export const apiClient = axios.create({
     'Content-Type': 'application/json'
   }
 });
+
+const baseURL = 'http://localhost:8000/api/v1/'
