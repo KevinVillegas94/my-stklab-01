@@ -41,5 +41,3 @@ CORS_ORIGIN_WHITELIST = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 
-# config/settings/__init__.py
-from .settings.development import *
